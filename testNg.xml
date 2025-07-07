@@ -7,10 +7,12 @@
         <listener
                 class-name="com.framework.listeners.ExtentTestNGITestListener" />
     </listeners>
+    <parameter name="Category" value="Regression" />
+    <parameter name="ReportName" value="Shop on JIO site" />
 
-    <test name="ChromeTests">
+    <test name="To Add prepaid plan based on amount">
         <classes>
-            <class name="com.framework.util.Utilities"/>
+            <class name="com.test.regression.Mobile_TC001_AddPrepaidPlan_Guest"/>
         </classes>
     </test>
 </suite>
