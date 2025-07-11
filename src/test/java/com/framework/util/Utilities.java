@@ -1,18 +1,11 @@
 package com.framework.util;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import java.text.SimpleDateFormat;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Random;
 
 public class Utilities {
-
-
-
     public static String GetCurrentDate(String format) {
         DateFormat dateFormat = new SimpleDateFormat(format);
         Date date = new Date();

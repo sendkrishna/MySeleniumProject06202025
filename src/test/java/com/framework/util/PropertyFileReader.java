@@ -11,20 +11,6 @@ import java.util.Properties;
 public class PropertyFileReader {
     private static final Logger LOG = LogManager.getLogger(PropertyFileReader.class);
 
-    /*public Properties loadPropertiesFile(String filePath) {
-
-        Properties prop = new Properties();
-
-        try (InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream(filePath)) {
-            prop.load(resourceAsStream);
-        } catch (IOException e) {
-            LOG.error("Unable to load properties file : " + filePath);
-        }
-
-        return prop;
-
-    }*/
-
     private static final Properties prop = new Properties();
 
     static {
@@ -59,6 +45,10 @@ public class PropertyFileReader {
 
     public static String getExtentReportName() {
         return prop.getProperty("extent.report.name");
+    }
+
+    public static String gettimeoutInSeconds() {
+        return prop.getProperty("timeoutInSeconds");
     }
 
 }

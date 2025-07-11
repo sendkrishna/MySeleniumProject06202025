@@ -12,7 +12,7 @@ public class DriverFactory {
 
     public static void  setDriver() {
         if (driver.get() == null) {
-            //Properties properties = new PropertyFileReader().loadPropertiesFile("config.properties");
+
             String browser = PropertyFileReader.getBrowser();
             switch (browser.toLowerCase()) {
                 case "chrome":
