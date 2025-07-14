@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-
+//This class is to maintain all the waits in the framework
 public class WaitManager {
 
     private static ThreadLocal<WaitManager> instance = new ThreadLocal<>();
@@ -18,7 +18,7 @@ public class WaitManager {
 
     private WaitManager(WebDriver driver){
         this.driver = driver;
-        this.timeoutInSeconds = Integer.parseInt(PropertyFileReader.gettimeoutInSeconds());
+        this.timeoutInSeconds = Integer.parseInt(PropertyFileReader.getTimeoutInSeconds());
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
     }
 

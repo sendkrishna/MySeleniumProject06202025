@@ -5,6 +5,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Random;
 
+
+// This class is to have various java methods
 public class Utilities {
     public static String GetCurrentDate(String format) {
         DateFormat dateFormat = new SimpleDateFormat(format);

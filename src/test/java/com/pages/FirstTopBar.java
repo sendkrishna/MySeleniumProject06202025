@@ -27,7 +27,7 @@ public class FirstTopBar {
     WaitManager wait;
 
 
-    public FirstTopBar(WebDriver driver) {
+    public FirstTopBar() {
         this.driver = DriverFactory.getDriver();;
         PageFactory.initElements(driver, this);
         this.wait = WaitManager.getInstance(driver);

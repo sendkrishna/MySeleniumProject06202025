@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+// This class is to read configuration for test execution
 public class PropertyFileReader {
     private static final Logger LOG = LogManager.getLogger(PropertyFileReader.class);
 
@@ -47,7 +48,7 @@ public class PropertyFileReader {
         return prop.getProperty("extent.report.name");
     }
 
-    public static String gettimeoutInSeconds() {
+    public static String getTimeoutInSeconds() {
         return prop.getProperty("timeoutInSeconds");
     }
 

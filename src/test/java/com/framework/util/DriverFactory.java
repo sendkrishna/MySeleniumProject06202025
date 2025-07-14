@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.Properties;
 
+//This class is to set driver as per browser preference , provide browser instance, and to quit browser instance
 public class DriverFactory {
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 

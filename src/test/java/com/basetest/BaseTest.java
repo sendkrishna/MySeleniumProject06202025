@@ -6,18 +6,18 @@ import com.framework.util.WaitManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+
 
 import java.util.List;
 
 public class BaseTest {
 
+    //This method is set up driver and launch test URL
     @BeforeClass
     public void setUp() {
-        System.out.println("2");
         DriverFactory.setDriver();
         WebDriver driver = DriverFactory.getDriver();
         WaitManager wait = WaitManager.getInstance(driver);
@@ -29,19 +29,13 @@ public class BaseTest {
 
         WebElement we = wait.waitForVisibilityOfElement(secondElement);
 
-        if (we.getText().equals("JioHome, Jio more")){
-            System.out.println("Success");
-        }else {
-            System.out.println("Fail");
-        }
-
+        Assert.assertEquals(we.getText(),"JioHome, Jio more","test is Success" );
     }
 
+    // This method is to quit driver after test
     @AfterClass
     public void tearDown() {
         DriverFactory.quitDriver();
     }
-
-
 
 }
