@@ -50,6 +50,8 @@ public class ExtentTestNGITestListener implements ITestListener, IReporter {
     @Override
     public synchronized void onStart(ITestContext context) {
 
+        System.out.println("1");
+
         LOG.debug("Listener on start");
 
         LOG.debug("Parameters " + context.getCurrentXmlTest().getAllParameters());
@@ -80,6 +82,8 @@ public class ExtentTestNGITestListener implements ITestListener, IReporter {
 
     @Override
     public synchronized void onTestStart(ITestResult result) {
+
+        System.out.println("3");
         LOG.debug("in onTestStart");
 
         LOG.debug(result.getTestClass().getXmlTest().getName());
