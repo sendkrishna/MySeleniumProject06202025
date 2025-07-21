@@ -12,7 +12,7 @@ public class Mobile_TC001_AddPrepaidPlan_Guest extends BasicMobileFeatures {
     @Test(dataProvider = "MapDataProvider", dataProviderClass = StaticDataProvider.class,priority = 1, description = "This method is to add a prepaid plan for a given mobile number")
     public void sampleTest(Map<String, String> maps)  {
         super.addPrePaidPlan(maps);
-        
+
     }
 
 }

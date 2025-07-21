@@ -37,21 +37,18 @@ public class FirstTopBar {
 
         LOG.debug("Clicking on menu and waiting for " + tabName);
         Assert.assertFalse(menuItems.isEmpty(), "No menu items were returned!");
+
         WebElement weTabName = menuItems.stream().filter(we -> we.getText().contains(tabName)).findFirst().orElse(null);
         Assert.assertNotNull(weTabName," Top navigation menu item " + tabName + " not found");
 
         WebElement weTabNameClick = weTabName.findElement(By.xpath("ancestor::*[3]"));
         Assert.assertNotNull(weTabNameClick," Top navigation menu item " + tabName + " not clickable");
 
-        try {
-            weTabNameClick.click();
-            WebElement secondElement = pageTitle.get(1);
-            WebElement we = wait.waitForVisibilityOfElement(secondElement);
+        weTabNameClick.click();
 
+        WebElement secondElement = pageTitle.get(1);
 
-        } catch (Exception e){
-
-        }
-
+        WebElement we = wait.waitForVisibilityOfElement(secondElement);
+        Assert.assertEquals(we.getText().replaceAll("\\s+", " ").trim(),"Discover the best of mobile life","Mobile page did not appear" );
     }
 }
